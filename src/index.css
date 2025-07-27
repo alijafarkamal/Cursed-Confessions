@@ -1,0 +1,372 @@
+@import url('https://fonts.googleapis.com/css2?family=UnifrakturCook:wght@700&family=Cormorant+Garamond:wght@700&family=Caveat:wght@700&display=swap');
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html, body {
+  margin: 0;
+  padding: 0;
+  overflow-x: hidden;
+}
+
+body, #root, .cathedral-bg {
+  min-height: 100vh;
+  background: linear-gradient(135deg, #18120b 80%, #7c2323 100%);
+  color: #e9e1c0;
+  font-family: 'Cormorant Garamond', serif;
+  background-image: url('https://www.transparenttextures.com/patterns/old-wall.png');
+  background-blend-mode: multiply;
+  position: relative;
+}
+
+.cathedral-bg {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  min-height: 100vh;
+  padding: 0;
+  position: relative;
+  width: 100%;
+  background-image: url('./assets/church1.jpeg');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
+
+
+.main-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  max-width: 800px;
+  gap: 2rem;
+  padding: 4rem 2rem;
+  margin-top: 10vh;
+  position: relative;
+  z-index: 2;
+}
+
+.left-section {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+  max-width: 600px;
+}
+
+.right-section {
+  display: none;
+}
+
+.church-image-container {
+  display: none;
+}
+
+.welcome-banner {
+  margin-bottom: 2rem;
+  text-align: center;
+  background: rgba(24, 18, 11, 0.9);
+  border-radius: 1.5rem;
+  box-shadow: 0 0 40px #7c2323aa, 0 0 8px #bfa76a55;
+  padding: 2.5rem 2rem 2rem 2rem;
+  border: 3px solid #bfa76a;
+  max-width: 600px;
+  width: 100%;
+  backdrop-filter: blur(5px);
+}
+
+.gothic-title {
+  font-family: 'UnifrakturCook', cursive;
+  font-size: 3.2rem;
+  color: #bfa76a;
+  letter-spacing: 0.05em;
+  text-shadow: 0 0 12px #7c2323, 0 0 2px #fff2;
+  margin-bottom: 1rem;
+}
+
+.gothic-subhead {
+  font-family: 'Caveat', cursive;
+  font-size: 1.8rem;
+  color: #bfa76a;
+  margin-top: 1.2rem;
+  margin-bottom: 0.5rem;
+  line-height: 1.5;
+  text-shadow: 0 0 10px #7c2323, 0 0 5px #fff2;
+  font-weight: 600;
+  letter-spacing: 0.02em;
+  background: rgba(24, 18, 11, 0.8);
+  padding: 1rem 1.5rem;
+  border-radius: 1rem;
+  border: 2px solid #bfa76a;
+  box-shadow: 0 0 20px rgba(191, 167, 106, 0.3);
+  backdrop-filter: blur(5px);
+}
+
+.italic {
+  font-style: italic;
+  color: #c2b280;
+}
+
+.latin-phrases {
+  font-family: 'UnifrakturCook', cursive;
+  font-size: 1.4rem;
+  color: #bfa76a;
+  margin-bottom: 1.5rem;
+  letter-spacing: 0.04em;
+  text-shadow: 0 0 8px #7c2323;
+  animation: flicker 2.5s infinite alternate;
+  text-align: center;
+  padding: 0.5rem;
+  background: rgba(24, 18, 11, 0.8);
+  border-radius: 0.5rem;
+  border: 1px solid #bfa76a;
+  backdrop-filter: blur(5px);
+}
+
+@keyframes flicker {
+  0% { opacity: 1; }
+  50% { opacity: 0.7; filter: blur(0.5px); }
+  100% { opacity: 1; }
+}
+
+.confessional-frame {
+  background: linear-gradient(120deg, rgba(45, 26, 11, 0.9) 80%, rgba(124, 34, 51, 0.9) 100%);
+  border: 6px double #bfa76a;
+  border-radius: 2.5rem;
+  box-shadow: 0 0 60px #18120b, 0 0 12px #bfa76a55;
+  padding: 2.5rem 2rem 2rem 2rem;
+  max-width: 540px;
+  width: 100%;
+  margin: 0 auto;
+  position: relative;
+  z-index: 2;
+  backdrop-filter: blur(5px);
+}
+
+.confession-form {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+.input-container {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.voice-btn {
+  font-family: 'UnifrakturCook', cursive;
+  font-size: 1.1rem;
+  background: #bfa76a;
+  color: #7c2323;
+  border: 2px solid #7c2323;
+  border-radius: 1rem;
+  padding: 0.8rem 1.5rem;
+  cursor: pointer;
+  box-shadow: 0 0 10px #bfa76a55;
+  transition: all 0.3s ease;
+  align-self: flex-start;
+}
+
+.voice-btn:hover {
+  background: #7c2323;
+  color: #e9e1c0;
+  box-shadow: 0 0 15px #7c2323;
+}
+
+.voice-btn.recording {
+  background: #7c2323;
+  color: #e9e1c0;
+  animation: recordingPulse 1.5s infinite;
+  box-shadow: 0 0 20px #7c2323;
+}
+
+@keyframes recordingPulse {
+  0%, 100% { 
+    box-shadow: 0 0 20px #7c2323;
+    transform: scale(1);
+  }
+  50% { 
+    box-shadow: 0 0 30px #7c2323, 0 0 40px #bfa76a;
+    transform: scale(1.05);
+  }
+}
+
+.recognition-error {
+  font-family: 'Caveat', cursive;
+  font-size: 1.1rem;
+  color: #ff6b6b;
+  background: rgba(255, 107, 107, 0.1);
+  border: 1px solid #ff6b6b;
+  border-radius: 0.5rem;
+  padding: 0.5rem;
+  text-align: center;
+}
+
+.confession-input {
+  font-family: 'Caveat', cursive;
+  font-size: 1.3rem;
+  background: #f4e4bc;
+  color: #2c1818;
+  border: 3px solid #8b4513;
+  border-radius: 0.5rem;
+  padding: 1.5rem;
+  resize: none;
+  box-shadow: 0 4px 8px rgba(139, 69, 19, 0.3);
+  outline: none;
+  transition: all 0.3s ease;
+}
+
+.confession-input:focus {
+  border: 3px solid #5d2e0c;
+  box-shadow: 
+    0 6px 12px rgba(139, 69, 19, 0.4),
+    inset 0 1px 0 rgba(255, 255, 255, 0.3),
+    inset 0 -1px 0 rgba(0, 0, 0, 0.2);
+  transform: translateY(-1px);
+}
+
+.confession-input::placeholder {
+  color: #8b4513;
+  opacity: 0.7;
+  font-style: italic;
+}
+
+.confess-btn {
+  font-family: 'UnifrakturCook', cursive;
+  font-size: 1.3rem;
+  background: #7c2323;
+  color: #e9e1c0;
+  border: 2px solid #bfa76a;
+  border-radius: 1.2rem;
+  padding: 0.8rem 2.2rem;
+  cursor: pointer;
+  box-shadow: 0 0 10px #bfa76a55;
+  transition: background 0.2s, color 0.2s, box-shadow 0.2s;
+}
+
+.confess-btn:hover {
+  background: #bfa76a;
+  color: #7c2323;
+  box-shadow: 0 0 18px #bfa76a;
+}
+
+.medieval-loading {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 120px;
+  font-family: 'UnifrakturCook', cursive;
+  font-size: 1.3rem;
+  color: #bfa76a;
+  text-shadow: 0 0 8px #7c2323;
+  animation: flicker 1.5s infinite alternate;
+}
+
+.loading-flicker {
+  animation: flicker 1.2s infinite alternate;
+}
+
+.roast-section {
+  position: relative;
+  min-height: 180px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 2rem;
+}
+
+.screen-dim {
+  position: absolute;
+  top: 0; left: 0; right: 0; bottom: 0;
+  background: rgba(24, 18, 11, 0.7);
+  z-index: 1;
+  pointer-events: none;
+  animation: dim-fade 0.8s;
+}
+
+@keyframes dim-fade {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+.sister-voice {
+  position: relative;
+  z-index: 2;
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 1.25rem;
+  color: #e9e1c0;
+  background: rgba(44, 22, 22, 0.9);
+  border-radius: 1.2rem;
+  padding: 1.5rem 1.2rem;
+  box-shadow: 0 0 18px #7c2323aa;
+  margin-bottom: 1.2rem;
+  text-align: left;
+  line-height: 1.6;
+  backdrop-filter: blur(5px);
+}
+
+.reset-btn {
+  font-family: 'UnifrakturCook', cursive;
+  font-size: 1.1rem;
+  background: #bfa76a;
+  color: #7c2323;
+  border: 2px solid #7c2323;
+  border-radius: 1.2rem;
+  padding: 0.6rem 1.8rem;
+  cursor: pointer;
+  box-shadow: 0 0 10px #bfa76a55;
+  transition: background 0.2s, color 0.2s, box-shadow 0.2s;
+}
+
+.reset-btn:hover {
+  background: #7c2323;
+  color: #e9e1c0;
+  box-shadow: 0 0 18px #7c2323;
+}
+
+@media (max-width: 1200px) {
+  .main-container {
+    margin-top: 8vh;
+    padding: 3rem 1.5rem;
+  }
+}
+
+
+
+
+
+@media (max-width: 768px) {
+  .main-container {
+    margin-top: 5vh;
+    padding: 2rem 1rem;
+  }
+  
+  .gothic-title {
+    font-size: 2.5rem;
+  }
+  
+  .gothic-subhead {
+    font-size: 1.3rem;
+  }
+  
+  .latin-phrases {
+    font-size: 1.2rem;
+  }
+  
+  .confessional-frame {
+    padding: 2rem 1.5rem 1.5rem 1.5rem;
+  }
+  
+
+}
